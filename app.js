@@ -87,7 +87,7 @@ function readPost() {
 
       const friendEl = document.createElement("div");
       friendEl.className = "friend";
-      friendEl.innerText = post.friend;
+      friendEl.innerText = "氏名. " + post.friend;
       const postEl = document.createElement("div");
       postEl.innerText = post.text;
       const hashtagsEl = document.createElement("div");
@@ -103,8 +103,6 @@ function readPost() {
       const imgEl = document.createElement('img');
       imgEl.src = `images/${post.image}`; // 画像パス
       imgEl.alt = '画像'; // 代替テキスト
-      imgEl.width = 250; // 横サイズ（px）
-      imgEl.height = 200; // 縦サイズ（px）
       postEl.append(imgEl); // 指定した要素にimg要素を挿入
       const timeStampEl = document.createElement("div");
 
