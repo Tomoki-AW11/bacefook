@@ -3,7 +3,7 @@ header {
   align-items: center;
   position: fixed;
   width: 100%;
-  height: 200px;
+  height: 100px;
   top: 0px;
   z-index: 999;
   background-color: antiquewhite;
@@ -13,34 +13,10 @@ header {
   display: block;
   width: 100%;
   text-align: center;
+  font-size: 50px;
+  font-family: "游明朝体","YuMincho";
 }
 
-.title h1 {
-  font-size: 48px;
-}
-
-@media screen and (min-width: 1025px) {
-  .title h1 {
-    font-size: 100px;
-  }
-}
-
-.title p {
-  font-size: 24px;
-}
-
-@media screen and (min-width: 1025px) {
-  .title p {
-    font-size: 16px;
-  }
-}
-
-.all_box {
-  display: flex;
-  width: 100%;
-  margin-top: 60px;
-  padding-top: 180px;
-}
 
 .half_box {
   display: block;
@@ -50,20 +26,20 @@ header {
 .left_side {
   display: block;
   position: fixed;
-  top: 200px;
+  top: 100px;
   height: 100vh;
   background-image: url(../img/left_bg.jpg);
 }
 
-@media screen and (min-width: 1025px) {
+/* @media screen and (min-width: 1025px) {
   .left_side {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-}
+} */
 
-.left_side_text {
+/* .left_side_text {
   padding-top: 0px;
 }
 
@@ -73,17 +49,17 @@ header {
     padding-top: 32px;
 
   }
-}
+} */
 
 .left_side_text p {
-  font-size: 24px;
-  line-height: 2;
+  font-size: 50px;
+  line-height: 10px;
   padding: 1em 0;
   color: black;
-  text-align: center;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 1025px) {
+/* @media screen and (min-width: 1025px) {
   .left_side_text p {
     font-size: 16px;
     padding: 1em;
@@ -93,11 +69,11 @@ header {
 .left_side_text p span {
   background: linear-gradient(transparent 70%, red 100%);
   padding: 0.5em;
-}
+} */
 
 button {
   width: 10em;
-  height: 3em;
+  height: 2em;
   font-size: 50px;
 }
 
