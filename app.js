@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
   addUsername.innerText = localStorage.username;
   usernameEl.append(addUsername);
   readPost();
+  console.log(login);
 })
 
 const getRandomElement = array => {
@@ -25,18 +26,24 @@ const images = [
   "002.jpg",
   "003.jpg",
   "004.jpg",
-  "005.jpg"
+  "005.jpg",
+  "006.jpg",
+  "007.jpg",
+  "008.jpg",
+  "009.jpg",
+  "010.jpg"
 ];
 
 function onclickSample() {
   const containerEl = document.querySelector("#newsfeed");
-  containerEl.textContent = "";
+  if (containerEl !== null) {
+    containerEl.textContent = "";
+  }
   readPost()
 }
 
 function formClick() {
-  
-  if(login === 1){
+  if (login === 1) {
     let userName = document.getElementById("username")
     userName = userName.firstElementChild.innerText;
     let textArea = document.getElementById("userpost").value
@@ -49,11 +56,11 @@ function formClick() {
       timestamp: new Date()
     };
     bacefook.newsfeed.push(formPost);
-  
+
     document.getElementById("userpost").value = "";
     document.getElementById("feeling").value = "";
     onclickSample();
-  }else{
+  } else {
     window.alert('登録名を入力するべし！！');
   }
 }
@@ -61,50 +68,53 @@ function formClick() {
 function readPost() {
   console.log("read!")
   const containerEl = document.querySelector("#newsfeed");
-  for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
-    const post = bacefook.newsfeed[index];
+  if (login === 1) {
+    for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
+      const post = bacefook.newsfeed[index];
 
-    const friendEl = document.createElement("div");
-    friendEl.className = "friend";
-    friendEl.innerText = post.friend;
-    const postEl = document.createElement("div");
-    postEl.innerText = post.text;
-    postEl.append(friendEl);
-    containerEl.append(postEl);
-    const feelingEl = document.createElement("div");
-    feelingEl.innerText = post.feeling;
-    postEl.append(feelingEl);
-    // // 参考　https://gray-code.com/javascript/create-new-img-element/
-    // // img要素を作成
-    const imgEl = document.createElement('img');
-    imgEl.src = `images/${post.image}`; // 画像パス
-    imgEl.alt = '画像'; // 代替テキスト
-    imgEl.width = 200; // 横サイズ（px）
-    imgEl.height = 200; // 縦サイズ（px）
-    postEl.append(imgEl); // 指定した要素にimg要素を挿入
-    const timeStampEl = document.createElement("div");
+      const friendEl = document.createElement("div");
+      friendEl.className = "friend";
+      friendEl.innerText = post.friend;
+      const postEl = document.createElement("div");
+      postEl.innerText = post.text;
+      postEl.append(friendEl);
+      containerEl.append(postEl);
+      const feelingEl = document.createElement("div");
+      feelingEl.innerText = post.feeling;
+      postEl.append(feelingEl);
+      // // 参考　https://gray-code.com/javascript/create-new-img-element/
+      // // img要素を作成
+      const imgEl = document.createElement('img');
+      imgEl.src = `images/${post.image}`; // 画像パス
+      imgEl.alt = '画像'; // 代替テキスト
+      imgEl.width = 250; // 横サイズ（px）
+      imgEl.height = 200; // 縦サイズ（px）
+      postEl.append(imgEl); // 指定した要素にimg要素を挿入
+      const timeStampEl = document.createElement("div");
 
-    let postDate = moment(post.timestamp, "YYYYMMDD");
-    const nowDate = moment(new Date(), "YYYYMMDD");
-    const fomPostDate = postDate.format('YYYY年MM月DD日 HH:mm:ss dddd');
-    const elpTime = nowDate.diff(postDate, "HH:mm");
+      let postDate = moment(post.timestamp, "YYYYMMDD");
+      const nowDate = moment(new Date(), "YYYYMMDD");
+      const fomPostDate = postDate.format('YYYY年MM月DD日 HH:mm:ss dddd');
+      const elpTime = nowDate.diff(postDate, "HH:mm");
 
-    if (elpTime > 604800000) {
-      timeStampEl.innerText = fomPostDate
-    } else if (elpTime > 86400000) {
-      timeStampEl.innerText = Math.floor((elpTime / 86400000)) + "日前の投稿"
-    } else if (elpTime > 3600000) {
-      timeStampEl.innerText = Math.floor((elpTime / 3600000)) + "時間前の投稿"
-    } else if (elpTime > 60000) {
-      timeStampEl.innerText = Math.floor((elpTime / 60000)) + "分前の投稿"
-    } else if (elpTime > 10000) {
-      timeStampEl.innerText = Math.floor((elpTime / 1000)) + "秒前の投稿"
-    } else {
-      timeStampEl.innerText = "たった今の投稿"
+      if (elpTime > 604800000) {
+        timeStampEl.innerText = fomPostDate
+      } else if (elpTime > 86400000) {
+        timeStampEl.innerText = Math.floor((elpTime / 86400000)) + "日前の投稿"
+      } else if (elpTime > 3600000) {
+        timeStampEl.innerText = Math.floor((elpTime / 3600000)) + "時間前の投稿"
+      } else if (elpTime > 60000) {
+        timeStampEl.innerText = Math.floor((elpTime / 60000)) + "分前の投稿"
+      } else if (elpTime > 10000) {
+        timeStampEl.innerText = Math.floor((elpTime / 1000)) + "秒前の投稿"
+      } else {
+        timeStampEl.innerText = "たった今の投稿"
+      }
+
+      postEl.append(timeStampEl);
+      postEl.id = "post"
+      containerEl.append(postEl);
     }
-
-    postEl.append(timeStampEl);
-    containerEl.append(postEl);
   }
 }
 
@@ -119,8 +129,9 @@ function buttonClick() {
 }
 
 const scheduler = () => {
-    setTimeout(scheduler, 5000); 
-    onclickSample();
+  console.log(login);
+  setTimeout(scheduler, 5000);
+  onclickSample();
 };
 
 scheduler();

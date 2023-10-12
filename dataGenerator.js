@@ -8,7 +8,7 @@
   window.bacefook = {};
   bacefook.newsfeed = [];
   bacefook.friends = {};
-  bacefook.friendNames = ["tamaroh", "kani", "eriko", "tsubasa", "masataka"];
+  bacefook.friendNames = ["うめ", "源之助", "團十郎", "フネ", "正造"];
   bacefook.friendNames.forEach(name => {
     bacefook.friends[name] = [];
   });
@@ -20,102 +20,61 @@
   };
 
   const starters = [
-    "totally just",
-    "just",
-    "completely",
-    "waaaaah! i",
-    "i just",
-    "a salaryman",
-    "a salaryman",
-    "yesterday I",
-    "a ninja",
-    "my boss"
+    "今日は",
+    "昨日は",
+    "20年ぶりに",
+    "今週末は",
+    "あれは確か４日前",
+    ""
   ];
   const verbs = [
-    "ate",
-    "drank",
-    "threw up in",
-    "refactored",
-    "iterated on",
-    "thought about",
-    "threw up on",
-    "saw",
-    "walked to",
-    "got lost in",
-    "walked into",
-    "googled",
-    "drove",
-    "ran to",
-    "worked on",
-    "slept on",
-    "slept in"
+    "孫達と",
+    "じぃさんと",
+    "ばぁさんと",
+    "せがれ達と",
+    "老人会のメンバーと",
+    "一人で",
+    ""
   ];
+  // 終わりの前
   const fillers = [
-    "my",
-    "your",
-    "his",
-    "her",
-    "my favorite",
-    "a beautiful",
-    "a delicious",
-    "that",
-    "this",
-    "an interesting",
-    "",
-    "the best",
-    "the greatest",
-    "a delightful"
+    "定食屋に行ったんじゃが",
+    "散歩に行ってきたんじゃが",
+    "コメダ珈琲店へ行ったんじゃが",
+    "大阪観光に行ったんじゃが",
+    "縁側で日向ぼっこしておったんじゃが",
+    "パチンコ屋に行っておったんじゃが",
+    "ゲートボールをやって来たんじゃが",
   ];
+  // 一番後ろ
   const nouns = [
-    "DIG",
-    "restaurant",
-    "omakase",
-    "hitomedia",
-    "family mart",
-    "private jet",
-    "mama",
-    "lawsons",
-    "conbini",
-    "whisky",
-    "onigiri",
-    "car",
-    "food",
-    "house",
-    "toilet",
-    "tokyo",
-    "city",
-    "iphone",
-    "google",
-    "unicorn",
-    "mess",
-    "pirate ship",
-    "ninja"
+    "天気がすこぶる良くて気持ちよかったわい🌞",
+    "腰がいとぉてなんにも手に付かんかったわい💢",
+    "そこで食べた寿司🍣が旨すぎて昇天しかけたわい😇",
+    "財布を無くしてしもぉてどえらい目にあったわい💰",
+    "横におるのが誰か分からんくなって怖かったわい😱",
+    "久方ぶりだったもんで年甲斐もなく張り切ってしもぉた🤣",
   ];
   const hashtags = [
-    "#DIG",
-    "#techlife",
-    "#toyota",
-    "#tokyo",
-    "#japan",
-    "#interesting",
-    "#til",
-    "#lol",
-    "#tgifriday",
-    "#hashtags",
-    "#japanlife",
-    "#oops",
+    "#ワシらまだまだ #現役",
+    "#腰痛 #改善 #ヤブ医者",
+    "#第2の人生 #真っ盛り",
+    "#老い #悪くはない #全ては人生経験",
+    "#散歩倶楽部",
+    "#ところで #あんた誰だ？",
+    "#全く #最近の #若者ときたら",
     ""
   ];
   const feelings = [
-    "happy",
-    "smug",
-    "lovestruck",
-    "gross",
-    "scared",
-    "tired",
-    "angry",
-    "frustrated",
-    "excited",
+    "幸せじゃ😀",
+    "勝ちじゃ😤",
+    "😍恋しいんじゃ",
+    "🤮反吐が出るんじゃ",
+    "😱おそがいのう",
+    "😮‍💨わずらわしいのう",
+    "😬トサカにくるんじゃ",
+    "😖こまるのう",
+    "🤩素晴らしいのう",
     ""
   ];
   const images = [
@@ -123,7 +82,12 @@
     "002.jpg",
     "003.jpg",
     "004.jpg",
-    "005.jpg"
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg"
   ];
 
   const generateRandomText = () => {
