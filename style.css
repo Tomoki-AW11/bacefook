@@ -13,7 +13,7 @@ header {
   display: block;
   width: 100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   font-family: "游明朝体","YuMincho";
 }
 
@@ -26,75 +26,50 @@ header {
 .left_side {
   display: block;
   position: fixed;
-  top: 100px;
+  top: 120px;
   height: 100vh;
   background-image: url(../img/left_bg.jpg);
 }
 
-/* @media screen and (min-width: 1025px) {
-  .left_side {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-} */
-
-/* .left_side_text {
-  padding-top: 0px;
+#userpost {  
+  font-size: 30px;
+  font-family: "游明朝体","YuMincho";
 }
 
-@media screen and (min-width: 1025px) {
-  .left_side_text {
-    display: flex;
-    padding-top: 32px;
+#feeling {  
+  font-size: 30px;
+  font-family: "游明朝体","YuMincho";
+}
 
-  }
-} */
+#username {  
+  font-size: 30px;
+  font-family: "游明朝体","YuMincho";
+}
 
 .left_side_text p {
-  font-size: 50px;
+  font-size: 30px;
   line-height: 10px;
-  padding: 1em 0;
+  padding: 20px;
   color: black;
   margin: 0 auto;
 }
 
-/* @media screen and (min-width: 1025px) {
-  .left_side_text p {
-    font-size: 16px;
-    padding: 1em;
-  }
-}
-
-.left_side_text p span {
-  background: linear-gradient(transparent 70%, red 100%);
-  padding: 0.5em;
-} */
-
-button {
+.button {
   width: 10em;
   height: 2em;
-  font-size: 50px;
+  font-size: 30px;
+  font-family: "游明朝体","YuMincho";
 }
-
 
 .right_side {
   margin-left: 50%;
   position: absolute;
-  top: 200px;
-}
-
-.right_side_image {
-  width: 75%;
-  margin: 8px auto;
-}
-
-.right_side_image img {
-  width: 100%;
+  top: 100px;
 }
 
 .right_side_text {
-  margin: 16px 0;
+  margin: 20px 0;
+  font-family: "游明朝体","YuMincho";
 }
 
 .right_side_text p {
