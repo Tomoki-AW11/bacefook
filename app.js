@@ -4,14 +4,26 @@ window.addEventListener("load", () => {
   let username = localStorage.getItem("username");
   if (!username) {
     // Prompt for one if a username isn't found
-    username = window.prompt("What is your name?");
-    localStorage.setItem("username", username);
-    login = 1;
+    username = prompt("名前を入力して下さい", "例）加藤　一二三");
+
+if (username === '') {
+	alert('何も入力されとらんよ？');
+} else if (username === null) {
+	alert('キャンセルしました');
+} else {
+  alert('🎵入場完了です🎵');
+  localStorage.setItem("username", username);
+  login = 1;
+}
   }
   const usernameEl = document.querySelector("#username");
   const addUsername = document.createElement("div");
-  addUsername.innerText = localStorage.username;
-  usernameEl.append(addUsername);
+  if(login === 1){
+    addUsername.innerText = localStorage.username;
+    usernameEl.append(addUsername);
+  }else{
+    addUsername.innerText = "⇩『入場』ボタンを押して名前を入力してね"
+  }
   readPost();
   console.log(login);
 })
@@ -51,6 +63,7 @@ function formClick() {
     const formPost = {
       friend: userName,
       text: textArea,
+      hashtags: "",
       feeling: formSelect,
       image: getRandomElement(images),
       timestamp: new Date()
@@ -61,7 +74,7 @@ function formClick() {
     document.getElementById("feeling").value = "";
     onclickSample();
   } else {
-    window.alert('登録名を入力するべし！！');
+    window.alert('『入場』ボタンを押して名前を入力するのじゃ！');
   }
 }
 
@@ -77,6 +90,9 @@ function readPost() {
       friendEl.innerText = post.friend;
       const postEl = document.createElement("div");
       postEl.innerText = post.text;
+      const hashtagsEl = document.createElement("div");
+      hashtagsEl.innerText = post.hashtags;
+      postEl.append(hashtagsEl);
       postEl.append(friendEl);
       containerEl.append(postEl);
       const feelingEl = document.createElement("div");
@@ -118,7 +134,7 @@ function readPost() {
   }
 }
 
-function buttonClick() {
+function logoutClick() {
   localStorage.clear();
   const containerEl = document.querySelector("#newsfeed");
   const usernameEl = document.querySelector("#username");
@@ -128,9 +144,16 @@ function buttonClick() {
   readPost()
 }
 
+function loginClick(){
+  let username = localStorage.getItem("username");
+  if(login === 0 || username === null){
+    window.location.reload();
+  }
+}
+
 const scheduler = () => {
   console.log(login);
-  setTimeout(scheduler, 5000);
+  setTimeout(scheduler, 10000);
   onclickSample();
 };
 

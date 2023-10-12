@@ -8,7 +8,7 @@
   window.bacefook = {};
   bacefook.newsfeed = [];
   bacefook.friends = {};
-  bacefook.friendNames = ["うめ", "源之助", "團十郎", "フネ", "正造"];
+  bacefook.friendNames = ["うめ", "源之助", "團十郎", "フネ", "正造","イネ","まさる"];
   bacefook.friendNames.forEach(name => {
     bacefook.friends[name] = [];
   });
@@ -36,7 +36,6 @@
     "一人で",
     ""
   ];
-  // 終わりの前
   const fillers = [
     "定食屋に行ったんじゃが",
     "散歩に行ってきたんじゃが",
@@ -46,7 +45,6 @@
     "パチンコ屋に行っておったんじゃが",
     "ゲートボールをやって来たんじゃが",
   ];
-  // 一番後ろ
   const nouns = [
     "天気がすこぶる良くて気持ちよかったわい🌞",
     "腰がいとぉてなんにも手に付かんかったわい💢",
@@ -96,7 +94,6 @@
       getRandomElement(verbs),
       getRandomElement(fillers),
       getRandomElement(nouns),
-      getRandomElement(hashtags)
     ].join(" ");
   };
 
@@ -109,6 +106,7 @@
     return {
       friend: getRandomElement(bacefook.friendNames),
       text: generateRandomText(),
+      hashtags: getRandomElement(hashtags),
       feeling: getRandomElement(feelings),
       image: getRandomElement(images),
       timestamp
