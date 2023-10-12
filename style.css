@@ -1,18 +1,121 @@
-#newsfeed {
-  background-color: lightblue;
-}
-#post {
-  background-color: lightgreen;
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  top: 0px;
+  z-index: 999;
+  background-color: antiquewhite;
 }
 
-@media (min-width: 600px) {
-  #parent {
-    display: flex;
-  }
-  #newsfeed {
-    flex-grow: 1;
-  }
-  #post {
-    flex-grow: 1;
+.title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.title h1 {
+  font-size: 48px;
+}
+@media screen and (min-width: 1025px) {
+  .title h1 {
+    font-size: 100px;
   }
 }
+.title p {
+  font-size: 24px;
+}
+@media screen and (min-width: 1025px) {
+  .title p {
+    font-size: 16px;
+  }
+}
+
+.all_box {
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+  padding-top: 180px;
+}
+
+.half_box {
+  display: block;
+  width: 50%;
+}
+
+.left_side {
+  display: block;
+  position: fixed;
+  top: 200px;
+  height: 100vh;
+  background-image: url(../img/left_bg.jpg);
+}
+@media screen and (min-width: 1025px) {
+  .left_side {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.left_side_text {
+  padding-top: 0px;
+}
+@media screen and (min-width: 1025px) {
+  .left_side_text {
+    display: flex;
+    padding-top: 32px;
+
+  }
+}
+.left_side_text p {
+  font-size: 24px;
+  line-height: 2;
+  padding: 1em 0;
+  color: black;
+  text-align: center;
+}
+@media screen and (min-width: 1025px) {
+  .left_side_text p {
+    font-size: 16px;
+    padding: 1em;
+  }
+}
+.left_side_text p span {
+  background: linear-gradient(transparent 70%, red 100%);
+  padding: 0.5em;
+}
+
+button {
+  width: 10em;
+  height:3em;
+  font-size: 50px;
+}
+
+
+.right_side {
+  margin-left: 50%;
+  position: absolute;
+  top: 200px;
+}
+.right_side_image {
+  width: 75%;
+  margin: 8px auto;
+}
+.right_side_image img {
+  width: 100%;
+}
+.right_side_text {
+  margin: 16px 0;
+}
+.right_side_text p {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+}
+@media screen and (min-width: 1025px) {
+  .right_side_text p {
+    font-size: 16px;
+  }
+}
+

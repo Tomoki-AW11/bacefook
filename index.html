@@ -10,35 +10,44 @@
 </head>
 
 <body>
-
-  <h1>Bacefook Newsfeed</h1>
-  <div id="parent">
-    <div id="newsfeed"></div>
-    <div id="post">
-      <button type=”button” onclick="onclickSample()">投稿を更新する</button>
-      <form action="#" method="post">
-        <p>USER</p>
-        <p id="username"></p>
-        <p><textarea id="userpost" name="comment" cols="30" rows="5" placeholder="例）今の気持ちを投稿しよう"></textarea></p>
-        <select name="languages" id="feeling">
-          <option value="">今の気分を選ぼう！</option>
-          <option value="😃">:幸せ</option>
-          <option value="php">:勝ち誇った顔::smug</option>
-          <option value="java">:ハート目::lovestruck</option>
-          <option value="golang">:ゲロゲロ::gross</option>
-          <option value="python">:ギャー::scared</option>
-          <option value="c#">:息を吐いている顔::tired</option>
-          <option value="C++">:勝ち誇った顔::angry</option>
-          <option value="erlang">:めっちゃ困った::frustrated</option>
-          <option value="erlang">:目が星::excited</option>
-        </select>
-      </form>
-      <p><input type="submit" onclick="formClick()" value="投稿する"></p>
-      <!--  -->
-      <input type="button" value="logout" onclick="buttonClick()">
-      <!--  -->
+  <header>
+    <div class="title">
+      <h1>電子回覧板</h1>
     </div>
-  </div>
+  </header>
+  <main>
+    <div class="all_box">
+      <div class="half_box left_side">
+        <div class="left_side_text">
+          <div id="post">
+            <button type=”button” onclick="onclickSample()">投稿を更新する</button>
+            <form action="#" method="post">
+              <p id="username"></p>
+              <p><textarea id="userpost" name="comment" cols="30" rows="5" placeholder="例）今の気持ちを投稿しよう"></textarea></p>
+              <select name="languages" id="feeling">
+                <option value="">今の気分を選ぶんじゃ！</option>
+                <option value="😀">幸せじゃ</option>
+                <option value="😤">勝ちじゃ</option>
+                <option value="😍">恋しいんじゃ</option>
+                <option value="🤮">反吐が出るんじゃ</option>
+                <option value="😱">おそがいのう</option>
+                <option value="😮‍💨">わずわしいのう</option>
+                <option value="😬">トサカにくるんじゃ</option>
+                <option value="😖">こまるのう</option>
+                <option value="🤩">素晴らしいのう</option>
+              </select>
+            </form>
+            <p><input type="button" onclick="formClick()" value="投稿する"></p>
+            <input type="button" value="logout" onclick="buttonClick()">
+          </div>
+        </div>
+      </div>
+      <div class="half_box right_side">
+        <div id="newsfeed"></div>
+      </div>
+    </div>
+    </div>
+  </main>
 </body>
 
 </html>
