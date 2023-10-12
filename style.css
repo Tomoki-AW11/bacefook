@@ -1,0 +1,18 @@
+#newsfeed {
+  background-color: lightblue;
+}
+#post {
+  background-color: lightgreen;
+}
+
+@media (min-width: 600px) {
+  #parent {
+    display: flex;
+  }
+  #newsfeed {
+    flex-grow: 1;
+  }
+  #post {
+    flex-grow: 1;
+  }
+}
